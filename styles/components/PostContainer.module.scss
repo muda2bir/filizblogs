@@ -1,0 +1,87 @@
+@use "../abstracts" as style;
+
+.blog_post_container {
+  border: 1px solid style.$border_color;
+  border-radius: 5px;
+
+  .text_container {
+    padding: 1.2em;
+    @include style.flex(flex-start, center);
+    flex-direction: column;
+    gap: 0.3em;
+
+    .category {
+      background-color: style.$primary_color;
+      color: #fff;
+      font-size: 0.8rem;
+      font-family: style.$secondary_font;
+      padding: 0.1em 0.8em;
+      border-radius: 20px;
+    }
+
+    .post_heading {
+      text-decoration: none;
+      & h1 {
+        font-family: style.$primary_font;
+        color: style.$headings_color;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+    }
+
+    .description {
+      text-decoration: none;
+      & p {
+        font-family: style.$secondary_font;
+        color: style.$text;
+      }
+    }
+
+    .link_save_btn_container {
+      width: 100%;
+      @include style.flex(center, space-between);
+    }
+
+    .learn_more {
+      text-decoration: none;
+      color: style.$secondary_color;
+      @include style.flex(center, center);
+      gap: 0.5em;
+      font-family: style.$secondary_font;
+    }
+
+    .save_btn_view_container {
+      @include style.flex(center, center);
+      gap: 0.5em;
+      color: style.$primary_color;
+      font-family: style.$primary_font;
+
+      .save {
+        margin-top: 0.4em;
+        & .save_icon {
+          cursor: pointer;
+        }
+      }
+
+      .views {
+        @include style.flex(center, center);
+        gap: 0.2em;
+      }
+    }
+  }
+}
+
+.post_image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+@media query breakpoints
+Desktop - 
+@media screen and (min-width: 1024px) {}
+Tablet - 
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+Mobile - 
+@media screen and (max-width: 768px) {}
+*/

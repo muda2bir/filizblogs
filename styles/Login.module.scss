@@ -1,0 +1,68 @@
+@use "./abstracts" as style;
+
+.main_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.form_content {
+  input {
+    display: block;
+    width: 100%;
+    font-family: style.$secondary_font;
+    padding: 0.6em 1.5em;
+    font-size: 1rem;
+    border: 1px solid style.$border_color;
+    border-radius: 5px;
+    margin-bottom: 0.7em;
+  }
+
+  button {
+    font-family: style.$primary_font;
+    background-color: style.$secondary_color;
+    font-size: 0.9rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 0.7em 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+}
+
+.signup_link {
+  font-family: style.$primary_font;
+  display: block;
+  margin-top: 1em;
+  font-size: 1.1rem;
+
+  a {
+    color: style.$primary_color;
+  }
+}
+
+/* 
+@media query breakpoints
+Desktop - 
+@media screen and (min-width: 1024px) {}
+Tablet - 
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+Mobile - 
+@media screen and (max-width: 768px) {}
+*/
+
+// Tablet -
+@media screen and (min-width: 768px) {
+  .main_container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+// Desktop -
+@media screen and (min-width: 1024px) {
+  .main_container {
+    grid-template-columns: 1fr 2fr;
+  }
+}

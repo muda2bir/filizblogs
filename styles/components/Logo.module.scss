@@ -1,0 +1,20 @@
+@use "../abstracts" as style;
+
+.logo {
+  @include style.flex(center, flex-start);
+  text-decoration: none;
+  gap: 0.5em;
+  .logo_main {
+    font-family: style.$primary_font;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .logo_submain {
+    font-family: style.$secondary_font;
+    font-size: 2.5rem;
+    color: style.$primary_color;
+    border-radius: 15px;
+  }
+}

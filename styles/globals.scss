@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Trirong:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+// Desktop Breakpoint
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 80vw;
+  }
+}
+
+// Tablet Breakpoint
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 85vw;
+  }
+}
+
+/* 
+@media query breakpoints
+Desktop - 
+@media screen and (min-width: 1024px) {}
+Tablet - 
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+Mobile - 
+@media screen and (max-width: 768px) {}
+*/
+
+// Vertical Scrollbar
+::-webkit-scrollbar {
+  height: 0; /* height of horizontal scrollbar ← You're missing this */
+  width: 10px;
+  background-color: #7743db;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3b3486;
+}

@@ -1,0 +1,83 @@
+/* Horizontal Scrollbar */
+@use "../abstracts" as style;
+
+.media_scroller {
+  display: grid;
+  gap: 0.8rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 37%;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 99;
+  margin-top: 1em;
+  border-radius: 0 0 10px 10px;
+  // box-shadow: 2px 20px 39px -20px rgba(0, 0, 0, 0.76);
+  // -webkit-box-shadow: 2px 20px 39px -20px rgba(0, 0, 0, 0.76);
+  // -moz-box-shadow: 2px 20px 39px -20px rgba(0, 0, 0, 0.76);
+}
+
+.media_element {
+  padding: 0.8rem;
+
+  & > button {
+    inline-size: 100%;
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+    padding: 0.5em 1em;
+    border: 1px solid style.$secondary_color;
+    background-color: transparent;
+    color: style.$secondary_color;
+    border-radius: 20px;
+    font-family: style.$primary_font;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    &:active {
+      transform: translateY(2px);
+    }
+
+    &:hover {
+      background-color: style.$secondary_color;
+      color: #fff;
+    }
+  }
+}
+
+.snaps_inline {
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps_inline > * {
+  scroll-snap-align: start;
+}
+
+// Tablet -
+@media screen and (min-width: 768px) {
+  .media_scroller {
+    grid-auto-columns: 21%;
+  }
+
+  .media_element {
+    padding: 0.8rem;
+    & > button {
+      aspect-ratio: 4 / 1;
+    }
+  }
+}
+
+// Desktop -
+@media screen and (min-width: 1024px) {
+  .media_scroller {
+    grid-auto-columns: 13%;
+  }
+
+  .media_element {
+    & > button {
+      aspect-ratio: 5 / 1;
+    }
+  }
+}
