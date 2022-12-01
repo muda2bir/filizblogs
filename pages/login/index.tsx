@@ -1,16 +1,49 @@
 import TopHeading from "../../components/TopHeading";
 import styles from "../../styles/Login.module.scss";
 import Link from "next/link";
+import { useFormik } from "formik";
+import { Error } from "../register";
+import { loginValidation } from "../../formValidate/validate";
 
 export default function Login() {
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      password: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+    validate: loginValidation,
+  });
+
   return (
     <>
       <TopHeading heading="Login" />
       <div className={styles.main_container}>
-        <form className={styles.form_content}>
-          <input type="text" placeholder="Your Username" name="username" />
-          <input type="password" placeholder="Your Password" name="password" />
-          <button>Login</button>
+        <form className={styles.form_content} onSubmit={formik.handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username"
+            {...formik.getFieldProps("username")}
+          />
+          {formik.errors.username && formik.touched.username ? (
+            <Error error={formik.errors.username} />
+          ) : null}
+          <input
+            type="password"
+            placeholder="Password"
+            {...formik.getFieldProps("password")}
+          />
+          {formik.errors.password && formik.touched.password ? (
+            <Error error={formik.errors.password} />
+          ) : null}
+          <button
+            type="submit"
+            disabled={!Object.keys(formik.errors) ? true : false}
+          >
+            Login
+          </button>
           <span className={styles.signup_link}>
             Don&apos;t have an account?{" "}
             <Link href="/register">Create Account</Link>

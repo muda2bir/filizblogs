@@ -4,9 +4,9 @@ import Logo from "../Logo";
 import { BsSearch, BsBookmark, BsPen } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
 import { GrDocumentText } from "react-icons/gr";
-import { VscThreeBars, VscChromeClose } from "react-icons/vsc";
-import { AiOutlineCaretDown } from "react-icons/ai";
+import { IoMdArrowDropdown, IoMdClose } from "react-icons/io";
 import { HeaderProps } from "./Header.types";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 export default function Header({
   dropdown,
@@ -14,6 +14,8 @@ export default function Header({
   search,
   setSearch,
 }: HeaderProps) {
+  let menuRef = useClickOutside(() => setDropdown(false));
+
   return (
     <>
       <header className={styles.header}>
@@ -38,23 +40,24 @@ export default function Header({
           {/* When Logged in */}
 
           {/* <div className={styles.create_btn}>
-          <Link href="/">
-            <button>
-              <BsPen className={styles.dropdown_icons} size={15} /> Write a Post
-            </button>
-          </Link>
-        </div> */}
+            <Link href="/">
+              <button>
+                <BsPen className={styles.dropdown_icons} size={15} /> Write a
+                Post
+              </button>
+            </Link>
+          </div> */}
           <div className={styles.search_and_bar_container}>
             <BsSearch
               className={styles.search_icon}
-              size={25}
+              size={20}
               onClick={() => {
                 setDropdown(false);
                 setSearch((prev) => !prev);
               }}
             />
             {dropdown ? (
-              <VscChromeClose
+              <IoMdClose
                 className={styles.bars_icon}
                 size={35}
                 onClick={() => {
@@ -63,7 +66,7 @@ export default function Header({
                 }}
               />
             ) : (
-              <AiOutlineCaretDown
+              <IoMdArrowDropdown
                 className={styles.bars_icon}
                 size={35}
                 onClick={() => {
@@ -79,6 +82,7 @@ export default function Header({
             styles.dropdown_navigation,
             dropdown ? styles.open_dropdown : "",
           ].join(" ")}
+          ref={menuRef}
         >
           <ul className={styles.nav_list}>
             <li>
