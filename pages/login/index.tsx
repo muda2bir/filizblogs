@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useFormik } from "formik";
 import { Error } from "../register";
 import { loginValidation } from "../../formValidate/validate";
+import { LoginFormValues } from "../../formValidate/FormValues";
 
 export default function Login() {
   const formik = useFormik({
@@ -11,11 +12,13 @@ export default function Login() {
       username: "",
       password: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
-    },
+    onSubmit: loginTheUser,
     validate: loginValidation,
   });
+
+  async function loginTheUser(values: LoginFormValues) {
+    console.log(values);
+  }
 
   return (
     <>

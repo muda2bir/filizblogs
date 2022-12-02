@@ -2,11 +2,11 @@ import styles from "../../styles/components/Header.module.scss";
 import Link from "next/link";
 import Logo from "../Logo";
 import { BsSearch, BsBookmark, BsPen } from "react-icons/bs";
-import { BiUserCircle } from "react-icons/bi";
-import { GrDocumentText } from "react-icons/gr";
+import { BiUser } from "react-icons/bi";
 import { IoMdArrowDropdown, IoMdClose } from "react-icons/io";
 import { HeaderProps } from "./Header.types";
 import { useClickOutside } from "../../hooks/useClickOutside";
+import { IoDocumentAttachOutline } from "react-icons/io5";
 
 export default function Header({
   dropdown,
@@ -87,8 +87,7 @@ export default function Header({
           <ul className={styles.nav_list}>
             <li>
               <Link href="/profile">
-                <BiUserCircle className={styles.dropdown_icons} size={22} />{" "}
-                Profile
+                <BiUser className={styles.dropdown_icons} size={22} /> Profile
               </Link>
             </li>
             <li>
@@ -105,7 +104,10 @@ export default function Header({
             </li>
             <li>
               <Link href="/">
-                <GrDocumentText className={styles.dropdown_icons} size={19} />{" "}
+                <IoDocumentAttachOutline
+                  className={styles.dropdown_icons}
+                  size={19}
+                />{" "}
                 Privacy Policy
               </Link>
             </li>

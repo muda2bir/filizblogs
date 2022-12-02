@@ -3,6 +3,7 @@ import TopHeading from "../../components/TopHeading";
 import Link from "next/link";
 import { useFormik } from "formik";
 import { signupValidation } from "../../formValidate/validate";
+import { RegisterFormValues } from "../../formValidate/FormValues";
 
 export default function Register() {
   const formik = useFormik({
@@ -13,11 +14,13 @@ export default function Register() {
       password: "",
       cpassword: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
-    },
+    onSubmit: registerTheUser,
     validate: signupValidation,
   });
+
+  async function registerTheUser(values: RegisterFormValues) {
+    console.log(values);
+  }
 
   return (
     <>
