@@ -36,7 +36,7 @@
   font-family: style.$primary_font;
   display: block;
   margin-top: 1em;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 
   a {
     color: style.$primary_color;
@@ -61,7 +61,7 @@ Mobile -
 }
 
 // Desktop -
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1023px) {
   .main_container {
     grid-template-columns: 1fr 2fr;
   }

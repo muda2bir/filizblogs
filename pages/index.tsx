@@ -6,7 +6,7 @@ import styles from "../styles/Main.module.scss";
 export default function Home() {
   return (
     <>
-      <HorizontalScroll />
+      {/* <HorizontalScroll /> */}
       <TopHeading heading="Trending" />
       <main className={styles.main}>
         <PostContainer

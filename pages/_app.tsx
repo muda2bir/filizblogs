@@ -4,13 +4,19 @@ import Layout from "../components/Layout";
 import Image from "next/image";
 import { useRouter, NextRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
-    <Layout>
-      <Loader />
-      <Component {...pageProps} />
-    </Layout>
+    <SessionProvider session={session}>
+      <Layout>
+        <Loader />
+        <Component {...pageProps} />
+      </Layout>
+    </SessionProvider>
   );
 }
 
@@ -42,8 +48,8 @@ function Loader() {
           <Image
             src="/loader.svg"
             alt="loading....."
-            width="164"
-            height="164"
+            width="160"
+            height="160"
           />
         </div>
       </>

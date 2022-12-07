@@ -28,9 +28,9 @@
     aspect-ratio: 4 / 1;
     object-fit: cover;
     padding: 0.5em 1em;
-    border: 1px solid style.$secondary_color;
-    background-color: transparent;
-    color: style.$secondary_color;
+    border: none;
+    background-color: style.$secondary_color;
+    color: #fff;
     border-radius: 20px;
     font-family: style.$primary_font;
     cursor: pointer;
@@ -41,7 +41,7 @@
     }
 
     &:hover {
-      background-color: style.$secondary_color;
+      background-color: style.$primary_color;
       color: #fff;
     }
   }
@@ -70,7 +70,7 @@
 }
 
 // Desktop -
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1023px) {
   .media_scroller {
     grid-auto-columns: 13%;
   }

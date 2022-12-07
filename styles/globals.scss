@@ -16,20 +16,24 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: scroll;
+}
+
 .container {
   width: 90vw;
   margin: 0 auto;
 }
 
 // Desktop Breakpoint
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1023px) {
   .container {
     width: 80vw;
   }
 }
 
 // Tablet Breakpoint
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1022px) {
   .container {
     width: 85vw;
   }
@@ -49,11 +53,11 @@ Mobile -
 ::-webkit-scrollbar {
   height: 0; /* height of horizontal scrollbar ← You're missing this */
   width: 10px;
-  background-color: #7743db;
+  background-color: #878e88;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3b3486;
+  background-color: #725752;
 }
 
 // Loader
@@ -63,4 +67,5 @@ Mobile -
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #725752;
 }

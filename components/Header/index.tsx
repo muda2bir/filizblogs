@@ -91,7 +91,7 @@ export default function Header({
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/savedposts">
                 <BsBookmark className={styles.dropdown_icons} size={19} /> Saved
                 Posts
               </Link>
@@ -103,7 +103,7 @@ export default function Header({
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/privacy">
                 <IoDocumentAttachOutline
                   className={styles.dropdown_icons}
                   size={19}

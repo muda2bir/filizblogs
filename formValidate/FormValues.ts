@@ -7,6 +7,6 @@ export type RegisterFormValues = {
 };
 
 export type LoginFormValues = {
-  username: string;
+  email: string;
   password: string;
 };

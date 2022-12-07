@@ -52,15 +52,13 @@ export const loginValidation = (values: LoginFormValues) => {
   let errors: FormikErrors<LoginFormValues> = {};
 
   // Username Validation
-  if (!values.username) {
-    errors.username = "Username is Required!!";
-  } else if (values.username.includes(" ")) {
-    errors.username = "Invalid Username!!";
+  if (!values.email) {
+    errors.email = "Username is Required!!";
+  } else if (values.email.includes(" ")) {
+    errors.email = "Invalid Username!!";
   }
 
   // Password Validation
-  let regPassword =
-    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
   if (!values.password) {
     errors.password = "Password is Required!!";
   }

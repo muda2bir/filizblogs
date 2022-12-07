@@ -9,7 +9,7 @@ import { LoginFormValues } from "../../formValidate/FormValues";
 export default function Login() {
   const formik = useFormik({
     initialValues: {
-      username: "",
+      email: "",
       password: "",
     },
     onSubmit: loginTheUser,
@@ -26,12 +26,12 @@ export default function Login() {
       <div className={styles.main_container}>
         <form className={styles.form_content} onSubmit={formik.handleSubmit}>
           <input
-            type="text"
-            placeholder="Username"
-            {...formik.getFieldProps("username")}
+            type="email"
+            placeholder="Email"
+            {...formik.getFieldProps("email")}
           />
-          {formik.errors.username && formik.touched.username ? (
-            <Error error={formik.errors.username} />
+          {formik.errors.email && formik.touched.email ? (
+            <Error error={formik.errors.email} />
           ) : null}
           <input
             type="password"
