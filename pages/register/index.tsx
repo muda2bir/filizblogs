@@ -35,9 +35,7 @@ export default function Register() {
             />
             {formik.errors.name && formik.touched.name ? (
               <Error error={formik.errors.name} />
-            ) : (
-              ""
-            )}
+            ) : null}
             <input
               type="email"
               placeholder="Enter your Email"

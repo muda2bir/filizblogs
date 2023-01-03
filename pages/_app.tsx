@@ -4,19 +4,13 @@ import Layout from "../components/Layout";
 import Image from "next/image";
 import { useRouter, NextRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { SessionProvider } from "next-auth/react";
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SessionProvider session={session}>
-      <Layout>
-        <Loader />
-        <Component {...pageProps} />
-      </Layout>
-    </SessionProvider>
+    <Layout>
+      <Loader />
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 
